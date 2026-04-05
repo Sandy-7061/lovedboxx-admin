@@ -55,7 +55,7 @@ const Categories = () => {
     setUploading(true);
     try {
       const { data } = await uploadImage(uploadData);
-      const fullUrl = `http://localhost:5000${data.imageUrl}`;
+      const fullUrl = `${import.meta.env.VITE_BASE_URL}${data.imageUrl}`;
       setFormData(prev => ({ ...prev, icon: fullUrl, image: fullUrl }));
       toast.success('Icon uploaded');
     } catch (error) {

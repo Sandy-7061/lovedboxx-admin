@@ -52,7 +52,7 @@ const Banners = () => {
     setUploading(true);
     try {
       const { data } = await uploadImage(uploadData);
-      const fullUrl = `http://localhost:5000${data.imageUrl}`;
+      const fullUrl = `${import.meta.env.VITE_BASE_URL}${data.imageUrl}`;
       setFormData(prev => ({ ...prev, imageUrl: fullUrl }));
       toast.success('Banner image uploaded');
     } catch (error) {

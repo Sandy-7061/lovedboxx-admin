@@ -82,7 +82,7 @@ const Products = () => {
     try {
       const { data } = await uploadImage(formData);
       // Construct full URL so it works on front-end
-      const fullUrl = `http://localhost:5000${data.imageUrl}`;
+      const fullUrl = `${import.meta.env.VITE_BASE_URL}${data.imageUrl}`;
       setNewProduct(prev => ({ ...prev, imageUrl: fullUrl }));
       toast.success('Image uploaded successfully');
     } catch (error) {

@@ -157,7 +157,7 @@ const Orders = () => {
                             <Eye size={18} />
                           </button>
                           {o.invoice?.pdfUrl && (
-                            <a href={`http://localhost:5000${o.invoice.pdfUrl}`} target="_blank" rel="noreferrer" className="p-2 text-gray-400 hover:text-gray-900 hover:bg-white rounded-xl shadow-sm transition-all" title="View Invoice">
+                            <a href={`${import.meta.env.VITE_BASE_URL}${o.invoice.pdfUrl}`} target="_blank" rel="noreferrer" className="p-2 text-gray-400 hover:text-gray-900 hover:bg-white rounded-xl shadow-sm transition-all" title="View Invoice">
                               <FileText size={18} />
                             </a>
                           )}
